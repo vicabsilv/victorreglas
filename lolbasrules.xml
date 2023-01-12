@@ -1,0 +1,1573 @@
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252450" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\adplus.exe$</field>
+	<field name="win.eventdata.OriginalFileName">Adplus.exe</field>
+	<description>ATT&CK T1003: Use of Adplus.exe</description>
+	<info type="text">The "AdPlus.exe" binary that is part of the Windows SDK can be used as a lolbin to dump process memory and execute arbitrary commands </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1003.001,MITRE</group>
+</rule>
+
+<rule id="252451" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -hang | -pn | -pmn | -p | -po | -c | -sc </field>
+	<description>ATT&CK T1003: Use of Adplus.exe</description>
+	<info type="text">The "AdPlus.exe" binary that is part of the Windows SDK can be used as a lolbin to dump process memory and execute arbitrary commands </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1003.001,MITRE</group>
+</rule>
+
+<rule id="252460" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\.:\\\\Windows\\\\Microsoft.NET\\\\Framework</field>
+	<field name="win.eventdata.Image">aspnet_compiler.exe</field>
+	<description>ATT&CK T1127: Suspicious aspnet_compiler.exe Execution</description>
+	<info type="text">Execute C# code with the Build Provider and proper folder structure in place. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition selection and not 1 of filter*
+<rule id="252470" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">bash.exe</field>
+	<field name="win.eventdata.CommandLine">-c </field>
+	<description>ATT&CK T1202: Suspicious Subsystem for Linux Bash Execution</description>
+	<info type="text">Performs execution of specified file, can be used for defensive evasion. </info>
+	<group>attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="252471" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentCommandLine">\.:\\\\Program\s+Files\\\\Git\\\\post-install.bat|\.:\\\\Program\s+Files\s+\(x86\)\\\\Git\\\\post-install.bat|echo\s+/etc/post-install/\.*.post</field>
+	<field name="win.eventdata.CommandLine">echo\s+/etc/post-install/\.*.post</field>
+	<description>ATT&CK T1202: Suspicious Subsystem for Linux Bash Execution</description>
+	<info type="text">Performs execution of specified file, can be used for defensive evasion. </info>
+	<group>attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252480" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\certoc.exe$</field>
+	<field name="win.eventdata.OriginalFileName">CertOC.exe</field>
+	<description>ATT&CK T1105: Suspicious File Download via CertOC.exe</description>
+	<info type="text">Detects when a user downloads file by using CertOC.exe </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252481" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">-GetCACAPS</field>
+	<description>ATT&CK T1105: Suspicious File Download via CertOC.exe</description>
+	<info type="text">Detects when a user downloads file by using CertOC.exe </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252500" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">CL_Invocation.ps1</field>
+	<field name="win.eventdata.CommandLine">SyncInvoke</field>
+	<description>ATT&CK T1216: Execution via CL_Invocation.ps1</description>
+	<info type="text">Detects Execution via SyncInvoke in CL_Invocation.ps1 module </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="252510" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\\\CL_LoadAssembly.ps1|LoadAssemblyFromPath </field>
+	<description>ATT&CK T1216: CL_LoadAssembly.ps1 Proxy Execution</description>
+	<info type="text">Detects the use of a Microsoft signed script to execute commands and bypassing AppLocker. </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="252520" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\\\CL_Mutexverifiers.ps1</field>
+	<field name="win.eventdata.CommandLine">runAfterCancelProcess </field>
+	<description>ATT&CK T1216: CL_Mutexverifiers.ps1 Proxy Execution</description>
+	<info type="text">Detects the use of a Microsoft signed script to execute commands </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="252490" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\xwizard.exe$</field>
+///Manual check needed!  Modifier parse failed:CommandLine|re
+	<description>ATT&CK T1218: Custom Class Execution via Xwizard</description>
+	<info type="text">Detects the execution of Xwizard tool with specific arguments which utilized to run custom class properties. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252530" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\cmdl32.exe$</field>
+	<field name="win.eventdata.OriginalFileName">CMDL32.EXE</field>
+	<description>ATT&CK T1218 T1202: Suspicious Cmdl32 Execution</description>
+	<info type="text">lolbas Cmdl32 is use to download a payload to evade antivirus </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="252531" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">/vpn </field>
+	<field name="win.eventdata.CommandLine">/lan </field>
+	<description>ATT&CK T1218 T1202: Suspicious Cmdl32 Execution</description>
+	<info type="text">lolbas Cmdl32 is use to download a payload to evade antivirus </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,attack.t1202,MITRE</group>
+</rule>
+
+///Manual check needed!  And condition
+<rule id="252540" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">ConfigSecurityPolicy.exe</field>
+	<field name="win.eventdata.Image">\\\\ConfigSecurityPolicy.exe$</field>
+	<field name="win.eventdata.OriginalFileName">ConfigSecurityPolicy.exe</field>
+	<field name="win.eventdata.CommandLine">https://|http://|ftp://</field>
+	<description>ATT&CK T1567: Suspicious ConfigSecurityPolicy Execution</description>
+	<info type="text">Upload file, credentials or data exfiltration with Binary part of Windows Defender </info>
+	<group>attack.exfiltration,attack.t1567,MITRE</group>
+</rule>
+
+<rule id="252550" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">cscript.exe</field>
+	<field name="win.eventdata.CommandLine">gatherNetworkInfo.vbs</field>
+	<description>ATT&CK T1615 T1059: GatherNetworkInfo.vbs Script Usage</description>
+	<info type="text">Adversaries can abuse of C:\Windows\System32\gatherNetworkInfo.vbs script along with cscript.exe to gather information about the target </info>
+	<group>attack.discovery,attack.execution,attack.t1615,attack.t1059.005,MITRE</group>
+</rule>
+
+<rule id="252560" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\CustomShellHost.exe$</field>
+	<description>ATT&CK T1216: Suspicious CustomShellHost Execution</description>
+	<info type="text">Detects the execution of CustomShellHost binary where the child isn't located in 'C:\Windows\explorer.exe' </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="252561" level="0">
+	<if_sid>252560</if_sid>
+	<field name="win.eventdata.Image">\.:\\\\Windows\\\\explorer.exe</field>
+	<description>Whitelist Interaction: Suspicious CustomShellHost Execution</description>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252570" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">/in:|/out:|/uri:</field>
+	<description>ATT&CK T1567: LOLBAS Data Exfiltration by DataSvcUtil.exe</description>
+	<info type="text">Detects when a user performs data exfiltration by using DataSvcUtil.exe </info>
+	<group>attack.exfiltration,attack.t1567,MITRE</group>
+</rule>
+
+<rule id="252571" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\DataSvcUtil.exe$</field>
+	<field name="win.eventdata.OriginalFileName">DataSvcUtil.exe</field>
+	<description>ATT&CK T1567: LOLBAS Data Exfiltration by DataSvcUtil.exe</description>
+	<info type="text">Detects when a user performs data exfiltration by using DataSvcUtil.exe </info>
+	<info type="text">Falsepositives: DataSvcUtil.exe being used may be performed by a system administrator.. Verify whether the user identity, user agent, and/or hostname should be making changes in your environment.. DataSvcUtil.exe being executed from unfamiliar users should be investigated. If known behavior is causing false positives, it can be exempted from the rule.. </info>
+	<group>attack.exfiltration,attack.t1567,MITRE</group>
+</rule>
+
+<rule id="252580" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\DeviceCredentialDeployment.exe$</field>
+	<description>ATT&CK T1218: DeviceCredentialDeployment Execution</description>
+	<info type="text">Detects the execution of DeviceCredentialDeployment to hide a process from view </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252590" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">diantz.exe</field>
+	<field name="win.eventdata.CommandLine">.cab</field>
+///Manual check needed!  Modifier parse failed:CommandLine|re
+	<description>ATT&CK T1564: Suspicious Diantz Alternate Data Stream Execution</description>
+	<info type="text">Compress target file into a cab file stored in the Alternate Data Stream (ADS) of the target file. </info>
+	<info type="text">Falsepositives: Very Possible. </info>
+	<group>attack.defense_evasion,attack.t1564.004,MITRE</group>
+</rule>
+
+<rule id="252600" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">diantz.exe</field>
+	<field name="win.eventdata.CommandLine"> \\\\\\\\</field>
+	<field name="win.eventdata.CommandLine">.cab</field>
+	<description>ATT&CK T1105: Suspicious Diantz Download and Compress Into a CAB File</description>
+	<info type="text">Download and compress a remote file and store it in a cab file on local machine. </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252610" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\xwizard.exe$</field>
+	<description>ATT&CK T1574: Xwizard DLL Sideloading</description>
+	<info type="text">Detects the execution of Xwizard tool from the non-default directory which can be used to sideload a custom xwizards.dll </info>
+	<info type="text">Falsepositives: Windows installed on non-C drive. </info>
+	<group>attack.defense_evasion,attack.t1574.002,MITRE</group>
+</rule>
+
+<rule id="252611" level="0">
+	<if_sid>252610</if_sid>
+	<field name="win.eventdata.Image">^\.:\\\\Windows\\\\System32\\\\</field>
+	<description>Whitelist Interaction: Xwizard DLL Sideloading</description>
+	<group>attack.defense_evasion,attack.t1574.002,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition ( selection and not filter ) or ( selection and procdump_flags )
+<rule id="252620" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\dump64.exe$</field>
+	<description>ATT&CK T1003: Suspicious Dump64.exe Execution</description>
+	<info type="text">Detects when a user bypasses Defender by renaming a tool to dump64.exe and placing it in a Visual Studio folder </info>
+	<info type="text">Falsepositives: Dump64.exe in other folders than the excluded one. </info>
+	<group>attack.credential_access,attack.t1003.001,MITRE</group>
+</rule>
+
+<rule id="252621" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -ma |accpeteula</field>
+	<description>ATT&CK T1003: Suspicious Dump64.exe Execution</description>
+	<info type="text">Detects when a user bypasses Defender by renaming a tool to dump64.exe and placing it in a Visual Studio folder </info>
+	<info type="text">Falsepositives: Dump64.exe in other folders than the excluded one. </info>
+	<group>attack.credential_access,attack.t1003.001,MITRE</group>
+</rule>
+
+<rule id="252622" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\Installer\\\\Feedback\\\\dump64.exe</field>
+	<description>ATT&CK T1003: Suspicious Dump64.exe Execution</description>
+	<info type="text">Detects when a user bypasses Defender by renaming a tool to dump64.exe and placing it in a Visual Studio folder </info>
+	<info type="text">Falsepositives: Dump64.exe in other folders than the excluded one. </info>
+	<group>attack.credential_access,attack.t1003.001,MITRE</group>
+</rule>
+
+<rule id="252630" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">winget</field>
+	<field name="win.eventdata.CommandLine">install</field>
+	<field name="win.eventdata.CommandLine">-m |--manifest</field>
+	<description>ATT&CK T1059: Monitoring Winget For LOLbin Execution</description>
+	<info type="text">Adversaries can abuse winget to download payloads remotely and execute them without touching disk. Winget will be included by default in Windows 10 and is already available in Windows 10 insider programs. The manifest option enables you to install an application by passing in a YAML file directly to the client. Winget can be used to download and install exe's, msi, msix files later. </info>
+	<info type="text">Falsepositives: Admin activity installing packages not in the official Microsoft repo. Winget probably won't be used by most users.. </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252640" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">Extexport.exe</field>
+	<field name="win.eventdata.Image">\\\\Extexport.exe$</field>
+	<field name="win.eventdata.OriginalFileName">extexport.exe</field>
+	<description>ATT&CK T1218: Suspicious Extexport Execution</description>
+	<info type="text">Extexport.exe loads dll and is execute from other folder the original path </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_*
+<rule id="252650" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">extrac32.exe</field>
+	<field name="win.eventdata.Image">\\\\extrac32.exe$</field>
+	<field name="win.eventdata.OriginalFileName">extrac32.exe</field>
+	<description>ATT&CK T1105: Suspicious Extrac32 Execution</description>
+	<info type="text">Download or Copy file with Extrac32 </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252651" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">.cab</field>
+	<description>ATT&CK T1105: Suspicious Extrac32 Execution</description>
+	<info type="text">Download or Copy file with Extrac32 </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252652" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">/C|/Y| \\\\\\\\</field>
+	<description>ATT&CK T1105: Suspicious Extrac32 Execution</description>
+	<info type="text">Download or Copy file with Extrac32 </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252660" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">extrac32.exe</field>
+	<field name="win.eventdata.CommandLine">.cab</field>
+///Manual check needed!  Modifier parse failed:CommandLine|re
+	<description>ATT&CK T1564: Suspicious Extrac32 Alternate Data Stream Execution</description>
+	<info type="text">Extract data from cab file and hide it in an alternate data stream </info>
+	<group>attack.defense_evasion,attack.t1564.004,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition selection_findstr and (all of selection_cli_download* or all of selection_cli_creds*)
+<rule id="252670" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">findstr</field>
+	<field name="win.eventdata.Image">findstr.exe$</field>
+	<field name="win.eventdata.OriginalFileName">FINDSTR.EXE</field>
+	<description>ATT&CK T1218 T1564 T1552 T1105: Abusing Findstr for Defense Evasion</description>
+	<info type="text">Attackers can use findstr to hide their artifacts or search specific strings and evade defense mechanism </info>
+	<info type="text">Falsepositives: Administrative findstr usage. </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1564.004,attack.t1552.001,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252671" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /v | -v </field>
+	<description>ATT&CK T1218 T1564 T1552 T1105: Abusing Findstr for Defense Evasion</description>
+	<info type="text">Attackers can use findstr to hide their artifacts or search specific strings and evade defense mechanism </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1564.004,attack.t1552.001,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252672" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /l | -l </field>
+	<description>ATT&CK T1218 T1564 T1552 T1105: Abusing Findstr for Defense Evasion</description>
+	<info type="text">Attackers can use findstr to hide their artifacts or search specific strings and evade defense mechanism </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1564.004,attack.t1552.001,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252673" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /s | -s </field>
+	<description>ATT&CK T1218 T1564 T1552 T1105: Abusing Findstr for Defense Evasion</description>
+	<info type="text">Attackers can use findstr to hide their artifacts or search specific strings and evade defense mechanism </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1564.004,attack.t1552.001,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="252674" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /i | -i </field>
+	<description>ATT&CK T1218 T1564 T1552 T1105: Abusing Findstr for Defense Evasion</description>
+	<info type="text">Attackers can use findstr to hide their artifacts or search specific strings and evade defense mechanism </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1564.004,attack.t1552.001,attack.t1105,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252680" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\forfiles.exe$</field>
+	<field name="win.eventdata.OriginalFileName">forfiles.exe</field>
+	<description>ATT&CK T1059: Use of Forfiles For Execution</description>
+	<info type="text">Execute commands and binaries from the context of "forfiles". This is used as a LOLBIN for example to bypass application whitelisting. </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252681" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /p | -p </field>
+	<description>ATT&CK T1059: Use of Forfiles For Execution</description>
+	<info type="text">Execute commands and binaries from the context of "forfiles". This is used as a LOLBIN for example to bypass application whitelisting. </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252682" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /m | -m </field>
+	<description>ATT&CK T1059: Use of Forfiles For Execution</description>
+	<info type="text">Execute commands and binaries from the context of "forfiles". This is used as a LOLBIN for example to bypass application whitelisting. </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252683" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /c | -c </field>
+	<description>ATT&CK T1059: Use of Forfiles For Execution</description>
+	<info type="text">Execute commands and binaries from the context of "forfiles". This is used as a LOLBIN for example to bypass application whitelisting. </info>
+	<info type="text">Falsepositives: Legitimate use by a via a batch script or by an administrator. </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252690" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\fsianycpu.exe$</field>
+	<field name="win.eventdata.OriginalFileName">fsianycpu.exe</field>
+	<field name="win.eventdata.Image">\\\\fsi.exe$</field>
+	<field name="win.eventdata.OriginalFileName">fsi.exe</field>
+	<description>ATT&CK T1059: Use of FSharp Interpreters</description>
+	<info type="text">The FSharp Interpreters, FsiAnyCpu.exe and FSi.exe, can be used for AWL bypass and is listed in Microsoft recommended block rules. </info>
+	<info type="text">Falsepositives: Legitimate use by a software developer.. </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition selection_parent or all of selection_ftp_*
+<rule id="252700" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\ftp.exe$</field>
+	<description>ATT&CK T1059 T1202: LOLBIN Execution Of The FTP.EXE Binary</description>
+	<info type="text">Detects execution of ftp.exe script execution with the "-s" flag and any child processes ran by ftp.exe </info>
+	<group>attack.execution,attack.t1059,attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="252701" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\ftp.exe$</field>
+	<field name="win.eventdata.OriginalFileName">ftp.exe</field>
+	<description>ATT&CK T1059 T1202: LOLBIN Execution Of The FTP.EXE Binary</description>
+	<info type="text">Detects execution of ftp.exe script execution with the "-s" flag and any child processes ran by ftp.exe </info>
+	<group>attack.execution,attack.t1059,attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="252702" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">-s:</field>
+	<description>ATT&CK T1059 T1202: LOLBIN Execution Of The FTP.EXE Binary</description>
+	<info type="text">Detects execution of ftp.exe script execution with the "-s" flag and any child processes ran by ftp.exe </info>
+	<group>attack.execution,attack.t1059,attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252710" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\gpscript.exe$</field>
+	<field name="win.eventdata.OriginalFileName">GPSCRIPT.EXE</field>
+	<description>ATT&CK T1218: Gpscript Execution</description>
+	<info type="text">Detects the execution of the LOLBIN gpscript, which executes logon or startup scripts configured in Group Policy </info>
+	<info type="text">Falsepositives: Legitimate uses of logon scripts distributed via group policy. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252711" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /logon| /startup</field>
+	<description>ATT&CK T1218: Gpscript Execution</description>
+	<info type="text">Detects the execution of the LOLBIN gpscript, which executes logon or startup scripts configured in Group Policy </info>
+	<info type="text">Falsepositives: Legitimate uses of logon scripts distributed via group policy. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition lolbin and not 1 of filter_*
+<rule id="252720" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\ie4uinit.exe$</field>
+	<field name="win.eventdata.OriginalFileName">IE4UINIT.EXE</field>
+	<description>ATT&CK T1218: Ie4uinit Lolbin Use From Invalid Path</description>
+	<info type="text">Detect use of ie4uinit.exe to execute commands from a specially prepared ie4uinit.inf file from a directory other than the usual directories </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252721" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">\.:\\\\windows\\\\system32\\\\|\.:\\\\windows\\\\sysWOW64\\\\</field>
+	<description>ATT&CK T1218: Ie4uinit Lolbin Use From Invalid Path</description>
+	<info type="text">Detect use of ie4uinit.exe to execute commands from a specially prepared ie4uinit.inf file from a directory other than the usual directories </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252722" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">null|^$|^ $|^-$</field>
+	<description>ATT&CK T1218: Ie4uinit Lolbin Use From Invalid Path</description>
+	<info type="text">Detect use of ie4uinit.exe to execute commands from a specially prepared ie4uinit.inf file from a directory other than the usual directories </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  And condition
+<rule id="252730" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\IEExec.exe$</field>
+	<field name="win.eventdata.OriginalFileName">IEExec.exe</field>
+	<field name="win.eventdata.CommandLine">https://|http://</field>
+	<description>ATT&CK: Abusing IEExec To Download Payloads</description>
+	<info type="text">Detects execution of the IEExec utility to download payloads </info>
+	<group>MITRE</group>
+</rule>
+
+<rule id="252740" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\ilasm.exe$</field>
+	<field name="win.eventdata.OriginalFileName">ilasm.exe</field>
+	<description>ATT&CK T1127: Ilasm Lolbin Use Compile C-Sharp</description>
+	<info type="text">Detect use of Ilasm.exe to compile c# code into dll or exe. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_*
+<rule id="252750" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\InstallUtil.exe$</field>
+	<field name="win.eventdata.OriginalFileName">InstallUtil.exe</field>
+	<description>ATT&CK T1218: Suspicious Execution of InstallUtil To Download</description>
+	<info type="text">Detects the use the .NET InstallUtil.exe application in order to download arbitrary files. The files will be written to %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE\ </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252751" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">http://|https://|ftp://</field>
+	<description>ATT&CK T1218: Suspicious Execution of InstallUtil To Download</description>
+	<info type="text">Detects the use the .NET InstallUtil.exe application in order to download arbitrary files. The files will be written to %LOCALAPPDATA%\Microsoft\Windows\INetCache\IE\ </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252760" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\jsc.exe$</field>
+	<field name="win.eventdata.CommandLine">.js</field>
+	<description>ATT&CK T1127: JSC Convert Javascript To Executable</description>
+	<info type="text">Detects the execution of the LOLBIN jsc.exe used by .NET to compile javascript code to .exe or .dll format </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="252770" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> run\s+run-cmd </field>
+	<description>ATT&CK T1127: Kavremover Dropped Binary LOLBIN Usage</description>
+	<info type="text">Detects the execution of a signed binary dropped by Kaspersky Lab Products Remover (kavremover) which can be abused as a LOLBIN to execute arbitrary commands and binaries. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="252771" level="0">
+	<if_sid>252770</if_sid>
+	<field name="win.eventdata.ParentImage">\\\\kavremover.exe$|\\\\cleanapi.exe$</field>
+	<description>Whitelist Interaction: Kavremover Dropped Binary LOLBIN Usage</description>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_*
+<rule id="252780" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">Launch-VsDevShell.ps1</field>
+	<description>ATT&CK T1216: Launch-VsDevShell.PS1 Proxy Execution</description>
+	<info type="text">Detects the use of the 'Launch-VsDevShell.ps1' Microsoft signed script to execute commands. </info>
+	<group>attack.defense_evasion,attack.t1216.001,MITRE</group>
+</rule>
+
+<rule id="252781" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">VsWherePath |VsInstallationPath </field>
+	<description>ATT&CK T1216: Launch-VsDevShell.PS1 Proxy Execution</description>
+	<info type="text">Detects the use of the 'Launch-VsDevShell.ps1' Microsoft signed script to execute commands. </info>
+	<info type="text">Falsepositives: Legitimate usage of the script by a developer. </info>
+	<group>attack.defense_evasion,attack.t1216.001,MITRE</group>
+</rule>
+
+<rule id="252790" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /INJECTRUNNING </field>
+	<description>ATT&CK T1055 T1218: Mavinject Inject DLL Into Running Process</description>
+	<info type="text">Detects process injection using the signed Windows tool "Mavinject" via the "INJECTRUNNING" flag </info>
+	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1055.001,attack.t1218.013,MITRE</group>
+</rule>
+
+<rule id="252791" level="0">
+	<if_sid>252790</if_sid>
+	<field name="win.eventdata.ParentImage">\.:\\\\Windows\\\\System32\\\\AppVClient.exe</field>
+	<description>Whitelist Interaction: Mavinject Inject DLL Into Running Process</description>
+	<group>attack.defense_evasion,attack.privilege_escalation,attack.t1055.001,attack.t1218.013,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection* or parent
+<rule id="252800" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\mftrace.exe$</field>
+	<field name="win.eventdata.OriginalFileName">mftrace.exe</field>
+	<description>ATT&CK T1127: Use of Mftrace.exe</description>
+	<info type="text">The "Trace log generation tool for Media Foundation Tools" (Mftrace.exe) can be used to execute arbitrary binaries </info>
+	<info type="text">Falsepositives: Legitimate use for tracing purposes. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="252801" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">.exe </field>
+	<field name="win.eventdata.CommandLine">.exe$</field>
+	<description>ATT&CK T1127: Use of Mftrace.exe</description>
+	<info type="text">The "Trace log generation tool for Media Foundation Tools" (Mftrace.exe) can be used to execute arbitrary binaries </info>
+	<info type="text">Falsepositives: Legitimate use for tracing purposes. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="252802" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\mftrace.exe$</field>
+	<description>ATT&CK T1127: Use of Mftrace.exe</description>
+	<info type="text">The "Trace log generation tool for Media Foundation Tools" (Mftrace.exe) can be used to execute arbitrary binaries </info>
+	<info type="text">Falsepositives: Legitimate use for tracing purposes. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection* and not filter
+<rule id="252810" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\msdt.exe$</field>
+	<field name="win.eventdata.CommandLine">\\\\WINDOWS\\\\diagnostics\\\\index\\\\PCWDiagnostic.xml</field>
+	<description>ATT&CK T1218: Execute MSDT Via Answer File</description>
+	<info type="text">Detects execution of "msdt.exe" using an answer file which is simulating the legitimate way of calling msdt via "pcwrun.exe" (For example from the compatibility tab) </info>
+	<info type="text">Falsepositives: Possible undocumented parents of "msdt" other than "pcwrun". </info>
+	<group>attack.defense_evasion,attack.t1218,attack.execution,MITRE</group>
+</rule>
+
+<rule id="252811" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -af | /af </field>
+	<description>ATT&CK T1218: Execute MSDT Via Answer File</description>
+	<info type="text">Detects execution of "msdt.exe" using an answer file which is simulating the legitimate way of calling msdt via "pcwrun.exe" (For example from the compatibility tab) </info>
+	<info type="text">Falsepositives: Possible undocumented parents of "msdt" other than "pcwrun". </info>
+	<group>attack.defense_evasion,attack.t1218,attack.execution,MITRE</group>
+</rule>
+
+<rule id="252812" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\pcwrun.exe$</field>
+	<description>ATT&CK T1218: Execute MSDT Via Answer File</description>
+	<info type="text">Detects execution of "msdt.exe" using an answer file which is simulating the legitimate way of calling msdt via "pcwrun.exe" (For example from the compatibility tab) </info>
+	<info type="text">Falsepositives: Possible undocumented parents of "msdt" other than "pcwrun". </info>
+	<group>attack.defense_evasion,attack.t1218,attack.execution,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252820" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\MSOHTMED.exe$</field>
+	<field name="win.eventdata.OriginalFileName">MsoHtmEd.exe</field>
+	<description>ATT&CK T1218: Download Arbitrary Files Via MSOHTMED.EXE</description>
+	<info type="text">Detects usage of "MSOHTMED" to download arbitrary files </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252821" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">http://|https://|ftp://</field>
+	<description>ATT&CK T1218: Download Arbitrary Files Via MSOHTMED.EXE</description>
+	<info type="text">Detects usage of "MSOHTMED" to download arbitrary files </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252830" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\MSPUB.exe$</field>
+	<field name="win.eventdata.OriginalFileName">MSPUB.exe</field>
+	<description>ATT&CK T1218: Download Arbitrary Files Via MSPUB.EXE</description>
+	<info type="text">Detects usage of "MSPUB" (Microsoft Publisher) to download arbitrary files </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252831" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">http://|https://|ftp://</field>
+	<description>ATT&CK T1218: Download Arbitrary Files Via MSPUB.EXE</description>
+	<info type="text">Detects usage of "MSPUB" (Microsoft Publisher) to download arbitrary files </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252841" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">\.:\\\\</field>
+	<field name="win.eventdata.CurrentDirectory"></field>
+	<description>ATT&CK T1218: LOLBIN From Abnormal Drive</description>
+	<info type="text">Detects LOLBINs executing from an abnormal drive such as a mounted ISO. </info>
+	<info type="text">Falsepositives: Rare false positives could occur on servers with multiple drives.. </info>
+	<group>attack.t1218.001,MITRE</group>
+</rule>
+
+<rule id="252842" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">null|^$|^ $|^-$</field>
+	<description>ATT&CK T1218: LOLBIN From Abnormal Drive</description>
+	<info type="text">Detects LOLBINs executing from an abnormal drive such as a mounted ISO. </info>
+	<info type="text">Falsepositives: Rare false positives could occur on servers with multiple drives.. </info>
+	<group>attack.t1218.001,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition lolbas and not 1 of filter_*
+<rule id="252850" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\OfflineScannerShell.exe$</field>
+	<description>ATT&CK T1218: Suspicious OfflineScannerShell.exe Execution From Another Folder</description>
+	<info type="text">Use OfflineScannerShell.exe to execute mpclient.dll library in the current working directory </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252851" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">\.:\\\\Program Files\\\\Windows Defender\\\\Offline\\\\</field>
+	<description>ATT&CK T1218: Suspicious OfflineScannerShell.exe Execution From Another Folder</description>
+	<info type="text">Use OfflineScannerShell.exe to execute mpclient.dll library in the current working directory </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252852" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CurrentDirectory">null|^$|^ $|^-$</field>
+	<description>ATT&CK T1218: Suspicious OfflineScannerShell.exe Execution From Another Folder</description>
+	<info type="text">Use OfflineScannerShell.exe to execute mpclient.dll library in the current working directory </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252860" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.OriginalFileName">OpenConsole.exe</field>
+	<field name="win.eventdata.Image">\\\\OpenConsole.exe$</field>
+	<description>ATT&CK T1059: Use of OpenConsole</description>
+	<info type="text">Detects usage of OpenConsole binary as a LOLBIN to launch other binaries to bypass application Whitelisting </info>
+	<info type="text">Falsepositives: Legitimate use by an administrator. </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252861" level="0">
+	<if_sid>252860</if_sid>
+	<field name="win.eventdata.Image">^\.:\\\\Program Files\\\\WindowsApps\\\\Microsoft.WindowsTerminal</field>
+	<description>Whitelist Interaction: Use of OpenConsole</description>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252870" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\pcalua.exe$</field>
+	<field name="win.eventdata.CommandLine"> -a</field>
+	<description>ATT&CK T1059: Use of Pcalua For Execution</description>
+	<info type="text">Execute commands and binaries from the context of The program compatibility assistant (Pcalua.exe). This is used as a LOLBIN for example to bypass application whitelisting. </info>
+	<info type="text">Falsepositives: Legitimate use by a via a batch script or by an administrator.. </info>
+	<info type="text">Sigma UUID: 0955e4e1-c281-4fb9-9ee1-5ee7b4b754d2 </info>
+	<info type="link">https://lolbas-project.github.io/lolbas/Binaries/Pcalua/ </info>
+	<info type="link">https://pentestlab.blog/2020/07/06/indirect-command-execution/ </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="252880" level="8">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\pcwrun.exe$</field>
+	<description>ATT&CK T1218: Indirect Command Execution By Program Compatibility Wizard</description>
+	<info type="text">Detect indirect command execution via Program Compatibility Assistant pcwrun.exe </info>
+	<info type="text">Falsepositives: Need to use extra processing with 'unique_count' / 'filter' to focus on outliers as opposed to commonly seen artifacts. Legit usage of scripts. </info>
+	<group>attack.defense_evasion,attack.t1218,attack.execution,MITRE</group>
+</rule>
+
+<rule id="252890" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\pcwrun.exe$</field>
+	<field name="win.eventdata.CommandLine">../</field>
+	<description>ATT&CK T1218: Execute Pcwrun.EXE To Leverage Follina</description>
+	<info type="text">Detects indirect command execution via Program Compatibility Assistant "pcwrun.exe" leveraging the follina (CVE-2022-30190) vulnerability </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<info type="text">Sigma UUID: 6004abd0-afa4-4557-ba90-49d172e0a299 </info>
+	<info type="link">https://twitter.com/nas_bench/status/1535663791362519040 </info>
+	<group>attack.defense_evasion,attack.t1218,attack.execution,MITRE</group>
+</rule>
+
+<rule id="252900" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">PktMon.exe$</field>
+	<field name="win.eventdata.OriginalFileName">PktMon.exe</field>
+	<description>ATT&CK T1040: Use of PktMon.exe</description>
+	<info type="text">Tools to Capture Network Packets on the windows 10 with October 2018 Update or later. </info>
+	<info type="text">Falsepositives: Legitimate use. </info>
+	<group>attack.credential_access,attack.t1040,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection* and not filter
+<rule id="252910" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\presentationhost.exe$</field>
+	<field name="win.eventdata.OriginalFileName">PresentationHost.exe</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via PresentationHost.exe</description>
+	<info type="text">Detects usage of "PresentationHost" which is a utility that runs ".xbap" (Browser Applications) files. It can be abused to run malicious ".xbap" files any bypass AWL </info>
+	<info type="text">Falsepositives: Legitimate ".xbap" being executed via "PresentationHost". </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252911" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">.xbap</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via PresentationHost.exe</description>
+	<info type="text">Detects usage of "PresentationHost" which is a utility that runs ".xbap" (Browser Applications) files. It can be abused to run malicious ".xbap" files any bypass AWL </info>
+	<info type="text">Falsepositives: Legitimate ".xbap" being executed via "PresentationHost". </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252912" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.:\\\\Windows\\\\|\.:\\\\Program\s+Files</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via PresentationHost.exe</description>
+	<info type="text">Detects usage of "PresentationHost" which is a utility that runs ".xbap" (Browser Applications) files. It can be abused to run malicious ".xbap" files any bypass AWL </info>
+	<info type="text">Falsepositives: Legitimate ".xbap" being executed via "PresentationHost". </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252920" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\presentationhost.exe$</field>
+	<field name="win.eventdata.OriginalFileName">PresentationHost.exe</field>
+	<description>ATT&CK T1218: Download Arbitrary Files Via PresentationHost.exe</description>
+	<info type="text">Detects usage of "PresentationHost" which is a utility that runs ".xbap" (Browser Applications) files to download arbitrary files </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252921" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">http://|https://|ftp://</field>
+	<description>ATT&CK T1218: Download Arbitrary Files Via PresentationHost.exe</description>
+	<info type="text">Detects usage of "PresentationHost" which is a utility that runs ".xbap" (Browser Applications) files to download arbitrary files </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252930" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\PrintBrm.exe$</field>
+	<field name="win.eventdata.CommandLine"> -f</field>
+	<field name="win.eventdata.CommandLine">.zip</field>
+	<description>ATT&CK T1105 T1564: PrintBrm ZIP Creation of Extraction</description>
+	<info type="text">Detects the execution of the LOLBIN PrintBrm.exe, which can be used to create or extract ZIP files. PrintBrm.exe should not be run on a normal workstation. </info>
+	<group>attack.command_and_control,attack.t1105,attack.defense_evasion,attack.t1564.004,MITRE</group>
+</rule>
+
+<rule id="252940" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\\\pubprn.vbs</field>
+	<field name="win.eventdata.CommandLine">script:</field>
+	<description>ATT&CK T1216: Pubprn.vbs Proxy Execution</description>
+	<info type="text">Detects the use of the 'Pubprn.vbs' Microsoft signed script to execute commands. </info>
+	<group>attack.defense_evasion,attack.t1216.001,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="252950" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\rasautou.exe$</field>
+	<field name="win.eventdata.OriginalFileName">rasdlui.exe</field>
+	<description>ATT&CK T1218: DLL Execution via Rasautou.exe</description>
+	<info type="text">Detects using Rasautou.exe for loading arbitrary .DLL specified in -d option and executes the export specified in -p. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252951" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -d </field>
+	<field name="win.eventdata.CommandLine"> -p </field>
+	<description>ATT&CK T1218: DLL Execution via Rasautou.exe</description>
+	<info type="text">Detects using Rasautou.exe for loading arbitrary .DLL specified in -d option and executes the export specified in -p. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_* or (selection_img and not filter_dll)
+<rule id="252960" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\Regsvcs.exe$|\\\\Regasm.exe$</field>
+	<field name="win.eventdata.OriginalFileName">RegSvcs.exe|RegAsm.exe</field>
+	<description>ATT&CK T1218: Regasm/Regsvcs Suspicious Execution</description>
+	<info type="text">Detects suspicious execution of Regasm/Regsvcs utilities </info>
+	<group>attack.defense_evasion,attack.t1218.009,MITRE</group>
+</rule>
+
+<rule id="252961" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\\\Users\\\\Public\\\\|\\\\AppData\\\\Local\\\\Temp\\\\|\\\\Desktop\\\\|\\\\Downloads\\\\|\\\\PerfLogs\\\\|\\\\Windows\\\\Temp\\\\|\\\\Microsoft\\\\Windows\\\\Start\s+Menu\\\\Programs\\\\Startup\\\\</field>
+	<description>ATT&CK T1218: Regasm/Regsvcs Suspicious Execution</description>
+	<info type="text">Detects suspicious execution of Regasm/Regsvcs utilities </info>
+	<group>attack.defense_evasion,attack.t1218.009,MITRE</group>
+</rule>
+
+<rule id="252962" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">.dll</field>
+	<description>ATT&CK T1218: Regasm/Regsvcs Suspicious Execution</description>
+	<info type="text">Detects suspicious execution of Regasm/Regsvcs utilities </info>
+	<group>attack.defense_evasion,attack.t1218.009,MITRE</group>
+</rule>
+
+<rule id="252970" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\\\register_app.vbs</field>
+	<field name="win.eventdata.CommandLine">-register</field>
+	<description>ATT&CK T1218: REGISTER_APP.VBS Proxy Execution</description>
+	<info type="text">Detects the use of a Microsoft signed script 'REGISTER_APP.VBS' to register a VSS/VDS Provider as a COM+ application. </info>
+	<info type="text">Falsepositives: Legitimate usage of the script. Always investigate what's being registered to confirm if it's benign. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252980" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\remote.exe$</field>
+	<field name="win.eventdata.OriginalFileName">remote.exe</field>
+	<description>ATT&CK T1127: Use of Remote.exe</description>
+	<info type="text">Remote.exe is part of WinDbg in the Windows SDK and can be used for AWL bypass and running remote files. </info>
+	<info type="text">Falsepositives: Approved installs of Windows SDK with Debugging Tools for Windows (WinDbg).. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+///Manual check needed!  And condition
+<rule id="252990" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\replace.exe$</field>
+	<field name="win.eventdata.CommandLine">/a|-a</field>
+	<description>ATT&CK T1105: Replace.exe Usage</description>
+	<info type="text">Detects the use of Replace.exe which can be used to replace file with another file </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253000" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\rundll32.exe$</field>
+	<field name="win.eventdata.CommandLine">InstallScreenSaver</field>
+	<description>ATT&CK T1218: Rundll32 InstallScreenSaver Execution</description>
+	<info type="text">An attacker may execute an application as a SCR File using rundll32.exe desk.cpl,InstallScreenSaver </info>
+	<info type="text">Falsepositives: Legitimate installation of a new screensaver. </info>
+	<group>attack.t1218.011,attack.defense_evasion,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253010" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\ScriptRunner.exe$</field>
+	<field name="win.eventdata.OriginalFileName">ScriptRunner.exe</field>
+	<description>ATT&CK T1218: Use of Scriptrunner.exe</description>
+	<info type="text">The "ScriptRunner.exe" binary can be abused to proxy execution through it and bypass possible whitelisting </info>
+	<info type="text">Falsepositives: Legitimate use when App-v is deployed. </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253011" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -appvscript </field>
+	<description>ATT&CK T1218: Use of Scriptrunner.exe</description>
+	<info type="text">The "ScriptRunner.exe" binary can be abused to proxy execution through it and bypass possible whitelisting </info>
+	<info type="text">Falsepositives: Legitimate use when App-v is deployed. </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253020" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\setres.exe$</field>
+	<field name="win.eventdata.Image">\\\\choice$</field>
+	<description>ATT&CK T1218 T1202: Use of Setres.exe</description>
+	<info type="text">Detects the use of Setres.exe to set the screen resolution and then potentially launch a file named "choice" (with any executable extension such as ".cmd" or ".exe") from the current execution path </info>
+	<info type="text">Falsepositives: Legitimate usage of Setres. </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1202,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition not system_utility and parent_is_settingsynchost
+<rule id="253030" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">^\.:\\\\Windows\\\\System32\\\\|^\.:\\\\Windows\\\\SysWOW64\\\\</field>
+	<description>ATT&CK T1574: Using SettingSyncHost.exe as LOLBin</description>
+	<info type="text">Detects using SettingSyncHost.exe to run hijacked binary </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1574.008,MITRE</group>
+</rule>
+
+<rule id="253031" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentCommandLine">cmd.exe\s+/c</field>
+	<field name="win.eventdata.ParentCommandLine">RoamDiag.cmd</field>
+	<field name="win.eventdata.ParentCommandLine">-outputpath</field>
+	<description>ATT&CK T1574: Using SettingSyncHost.exe as LOLBin</description>
+	<info type="text">Detects using SettingSyncHost.exe to run hijacked binary </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1574.008,MITRE</group>
+</rule>
+
+<rule id="253040" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\sftp.exe$</field>
+	<field name="win.eventdata.CommandLine"> -D\s+..| -D\s+\.:\\\\</field>
+	<description>ATT&CK T1218: Use Of The SFTP.EXE Binary As A LOLBIN</description>
+	<info type="text">Detects the usage of the "sftp.exe" binary as a LOLBIN by abusing the "-D" flag </info>
+	<group>attack.defense_evasion,attack.execution,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition selection and not 1 of filter_*
+<rule id="253050" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\link.exe$</field>
+	<field name="win.eventdata.CommandLine">LINK\s+/</field>
+	<description>ATT&CK T1218: Sideloading Link.EXE</description>
+	<info type="text">Detects the execution utitilies often found in Visual Studio tools that hardcode the call to the binary "link.exe". They can be abused to sideload any binary with the same name </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253051" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">^\.:\\\\Program Files\\\\Microsoft Visual Studio\\\\|^\.:\\\\Program Files \(x86\)\\\\Microsoft Visual Studio\\\\</field>
+	<field name="win.eventdata.ParentImage">\\\\VC\\\\Tools\\\\MSVC\\\\</field>
+	<description>ATT&CK T1218: Sideloading Link.EXE</description>
+	<info type="text">Detects the execution utitilies often found in Visual Studio tools that hardcode the call to the binary "link.exe". They can be abused to sideload any binary with the same name </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253060" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\sigverif.exe$</field>
+	<description>ATT&CK T1216: Suspicious Sigverif Execution</description>
+	<info type="text">Detects the execution of sigverif binary as a parent process which could indicate it being used as a LOLBIN to proxy execution </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253070" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\squirrel.exe$</field>
+	<description>ATT&CK: Use of Squirrel.exe</description>
+	<info type="text">The "Squirrel.exe" binary that is part of multiple software (Slack, Teams, Discord...etc) can be used as a LOLBIN </info>
+	<info type="text">Falsepositives: See rule (fa4b21c9-0057-4493-b289-2556416ae4d7) for possible FPs. </info>
+	<group>attack.defense_evasion,attack.execution,MITRE</group>
+</rule>
+
+<rule id="253071" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> --download | --update | --updateRollback=</field>
+	<description>ATT&CK: Use of Squirrel.exe</description>
+	<info type="text">The "Squirrel.exe" binary that is part of multiple software (Slack, Teams, Discord...etc) can be used as a LOLBIN </info>
+	<info type="text">Falsepositives: See rule (fa4b21c9-0057-4493-b289-2556416ae4d7) for possible FPs. </info>
+	<group>attack.defense_evasion,attack.execution,MITRE</group>
+</rule>
+
+<rule id="253072" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">http</field>
+	<description>ATT&CK: Use of Squirrel.exe</description>
+	<info type="text">The "Squirrel.exe" binary that is part of multiple software (Slack, Teams, Discord...etc) can be used as a LOLBIN </info>
+	<info type="text">Falsepositives: See rule (fa4b21c9-0057-4493-b289-2556416ae4d7) for possible FPs. </info>
+	<group>attack.defense_evasion,attack.execution,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253080" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\AccCheckConsole.exe$</field>
+	<field name="win.eventdata.OriginalFileName">AccCheckConsole.exe</field>
+	<description>ATT&CK: Suspicious LOLBIN AccCheckConsole</description>
+	<info type="text">Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL </info>
+	<info type="text">Falsepositives: Legitimate use of the UI Accessibility Checker. </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+
+<rule id="253081" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -window </field>
+	<field name="win.eventdata.CommandLine">.dll</field>
+	<description>ATT&CK: Suspicious LOLBIN AccCheckConsole</description>
+	<info type="text">Detects suspicious LOLBIN AccCheckConsole execution with parameters as used to load an arbitrary DLL </info>
+	<info type="text">Falsepositives: Legitimate use of the UI Accessibility Checker. </info>
+	<group>attack.execution,MITRE</group>
+</rule>
+
+<rule id="253090" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">AtBroker.exe$</field>
+	<field name="win.eventdata.CommandLine">start</field>
+	<description>ATT&CK T1218: Suspicious Atbroker Execution</description>
+	<info type="text">Atbroker executing non-deafualt Assistive Technology applications </info>
+	<info type="text">Falsepositives: Legitimate, non-default assistive technology applications execution. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253091" level="0">
+	<if_sid>253090</if_sid>
+	<field name="win.eventdata.CommandLine">animations|audiodescription|caretbrowsing|caretwidth|colorfiltering|cursorscheme|filterkeys|focusborderheight|focusborderwidth|highcontrast|keyboardcues|keyboardpref|magnifierpane|messageduration|minimumhitradius|mousekeys|Narrator|osk|overlappedcontent|showsounds|soundsentry|stickykeys|togglekeys|windowarranging|windowtracking|windowtrackingtimeout|windowtrackingzorder</field>
+	<description>Whitelist Interaction: Suspicious Atbroker Execution</description>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253100" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\certreq.exe$</field>
+	<field name="win.eventdata.OriginalFileName">CertReq.exe</field>
+	<description>ATT&CK T1105: Suspicious Certreq Command to Download</description>
+	<info type="text">Detects a suspicious certreq execution taken from the LOLBAS examples, which can be abused to download (small) files </info>
+	<info type="text">Falsepositives: Unlikely. </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253101" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -Post </field>
+	<field name="win.eventdata.CommandLine"> -config </field>
+	<field name="win.eventdata.CommandLine"> http</field>
+	<field name="win.eventdata.CommandLine"> \.:\\\\windows\\\\win.ini </field>
+	<description>ATT&CK T1105: Suspicious Certreq Command to Download</description>
+	<info type="text">Detects a suspicious certreq execution taken from the LOLBAS examples, which can be abused to download (small) files </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253110" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">-i|/install|-a|/add-driver|.inf</field>
+	<field name="win.eventdata.Image">\\\\pnputil.exe$</field>
+	<description>ATT&CK T1547: Suspicious Driver Install by pnputil.exe</description>
+	<info type="text">Detects when a possible suspicious driver is being installed via pnputil.exe lolbin </info>
+	<info type="text">Falsepositives: Pnputil.exe being used may be performed by a system administrator.. Verify whether the user identity, user agent, and/or hostname should be making changes in your environment.. Pnputil.exe being executed from unfamiliar users should be investigated. If known behavior is causing false positives, it can be exempted from the rule.. </info>
+	<group>attack.persistence,attack.t1547,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253120" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\DXCap.exe$</field>
+	<field name="win.eventdata.OriginalFileName">DXCap.exe</field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via Dxcap.exe</description>
+	<info type="text">Detects execution of of Dxcap.exe </info>
+	<info type="text">Falsepositives: Legitimate execution of dxcap.exe by legitimate user. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253121" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -c </field>
+	<description>ATT&CK T1218: Application Whitelisting Bypass via Dxcap.exe</description>
+	<info type="text">Detects execution of of Dxcap.exe </info>
+	<info type="text">Falsepositives: Legitimate execution of dxcap.exe by legitimate user. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253130" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">grpconv.exe\s+-o|grpconv\s+-o</field>
+	<description>ATT&CK T1547: Suspicious GrpConv Execution</description>
+	<info type="text">Detects the suspicious execution of a utility to convert Windows 3.x .grp files or for persistence purposes by malicious software or actors </info>
+	<group>attack.persistence,attack.t1547,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253140" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">MpCmdRun.exe</field>
+	<field name="win.eventdata.Description">Microsoft Malware Protection Command Line Utility</field>
+	<description>ATT&CK T1218 T1105: Windows Defender Download Activity</description>
+	<info type="text">Detect the use of Windows Defender to download payloads </info>
+	<group>attack.defense_evasion,attack.t1218,attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253141" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">DownloadFile</field>
+	<field name="win.eventdata.CommandLine">url</field>
+	<description>ATT&CK T1218 T1105: Windows Defender Download Activity</description>
+	<info type="text">Detect the use of Windows Defender to download payloads </info>
+	<group>attack.defense_evasion,attack.t1218,attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253150" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\sqldumper.exe$</field>
+	<field name="win.eventdata.CommandLine">0x0110|0x01100:40</field>
+	<description>ATT&CK T1003: Dumping Process via Sqldumper.exe</description>
+	<info type="text">Detects process dump via legitimate sqldumper.exe binary </info>
+	<info type="text">Falsepositives: Legitimate MSSQL Server actions. </info>
+	<group>attack.credential_access,attack.t1003.001,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection* and not 1 of filter_*
+<rule id="253160" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wsl.exe$</field>
+	<field name="win.eventdata.OriginalFileName">wsl.exe</field>
+	<description>ATT&CK T1218 T1202: WSL Execution</description>
+	<info type="text">Detects Possible usage of Windows Subsystem for Linux (WSL) binary as a LOLBIN </info>
+	<info type="text">Falsepositives: Automation and orchestration scripts may use this method execute scripts etc. Legitimate use by Windows to kill processes opened via WSL (example VsCode WSL server). </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="253161" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -e | --exec | --system | /mnt/c</field>
+	<description>ATT&CK T1218 T1202: WSL Execution</description>
+	<info type="text">Detects Possible usage of Windows Subsystem for Linux (WSL) binary as a LOLBIN </info>
+	<info type="text">Falsepositives: Automation and orchestration scripts may use this method execute scripts etc. Legitimate use by Windows to kill processes opened via WSL (example VsCode WSL server). </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="253162" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\cmd.exe$</field>
+	<field name="win.eventdata.CommandLine"> -d </field>
+	<field name="win.eventdata.CommandLine"> -e\s+kill </field>
+	<description>ATT&CK T1218 T1202: WSL Execution</description>
+	<info type="text">Detects Possible usage of Windows Subsystem for Linux (WSL) binary as a LOLBIN </info>
+	<info type="text">Falsepositives: Automation and orchestration scripts may use this method execute scripts etc. Legitimate use by Windows to kill processes opened via WSL (example VsCode WSL server). </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,attack.t1202,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_*
+<rule id="253170" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\SyncAppvPublishingServer.exe$</field>
+	<field name="win.eventdata.OriginalFileName">syncappvpublishingserver.exe</field>
+	<description>ATT&CK T1218: SyncAppvPublishingServer Execute Arbitrary PowerShell Code</description>
+	<info type="text">Executes arbitrary PowerShell code using SyncAppvPublishingServer.exe. </info>
+	<info type="text">Falsepositives: App-V clients. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253171" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">"n; </field>
+	<description>ATT&CK T1218: SyncAppvPublishingServer Execute Arbitrary PowerShell Code</description>
+	<info type="text">Executes arbitrary PowerShell code using SyncAppvPublishingServer.exe. </info>
+	<info type="text">Falsepositives: App-V clients. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253180" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\\\\SyncAppvPublishingServer.vbs</field>
+	<field name="win.eventdata.CommandLine">;</field>
+	<description>ATT&CK T1218 T1216: SyncAppvPublishingServer VBS Execute Arbitrary PowerShell Code</description>
+	<info type="text">Executes arbitrary PowerShell code using SyncAppvPublishingServer.vbs </info>
+	<group>attack.defense_evasion,attack.t1218,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="253190" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">ttdinject.exe$</field>
+	<field name="win.eventdata.OriginalFileName">TTDInject.EXE</field>
+	<description>ATT&CK T1127: Use of TTDInject.exe</description>
+	<info type="text">Detects the executiob of TTDInject.exe, which is used by Windows 10 v1809 and newer to debug time travel (underlying call of tttracer.exe) </info>
+	<info type="text">Falsepositives: Legitimate use. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="253200" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\tttracer.exe$</field>
+	<description>ATT&CK T1218 T1003: Time Travel Debugging Utility Usage</description>
+	<info type="text">Detects usage of Time Travel Debugging Utility. Adversaries can execute malicious processes and dump processes, such as lsass.exe, via tttracer.exe. </info>
+	<info type="text">Falsepositives: Legitimate usage by software developers/testers. </info>
+	<group>attack.defense_evasion,attack.credential_access,attack.t1218,attack.t1003.001,MITRE</group>
+</rule>
+
+<rule id="253210" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">type </field>
+	<field name="win.eventdata.CommandLine"> >\s+\\\\\\\\</field>
+	<description>ATT&CK T1105: Potential Download/Upload Activity Using Type Command</description>
+	<info type="text">Detects usage of the "type" command to download/upload data from WebDAV server </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253211" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">type\s+\\\\\\\\</field>
+	<field name="win.eventdata.CommandLine"> > </field>
+	<description>ATT&CK T1105: Potential Download/Upload Activity Using Type Command</description>
+	<info type="text">Detects usage of the "type" command to download/upload data from WebDAV server </info>
+	<group>attack.command_and_control,attack.t1105,MITRE</group>
+</rule>
+
+<rule id="253220" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">UtilityFunctions.ps1|RegSnapin </field>
+	<description>ATT&CK T1216: UtilityFunctions.ps1 Proxy Dll</description>
+	<info type="text">Detects the use of a Microsoft signed script executing a managed DLL with PowerShell. </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="253240" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\vbc.exe$</field>
+	<field name="win.eventdata.Image">\\\\cvtres.exe$</field>
+	<description>ATT&CK T1027: Visual Basic Command Line Compiler Usage</description>
+	<info type="text">Detects successful code compilation via Visual Basic Command Line Compiler that utilizes Windows Resource to Object Converter. </info>
+	<info type="text">Falsepositives: Utilization of this tool should not be seen in enterprise environment. </info>
+	<group>attack.defense_evasion,attack.t1027.004,MITRE</group>
+</rule>
+
+<rule id="253230" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\VisualUiaVerifyNative.exe$</field>
+	<field name="win.eventdata.OriginalFileName">VisualUiaVerifyNative.exe</field>
+	<description>ATT&CK T1218: Use of VisualUiaVerifyNative.exe</description>
+	<info type="text">VisualUiaVerifyNative.exe is a Windows SDK that can be used for AWL bypass and is listed in Microsoft's recommended block rules. </info>
+	<info type="text">Falsepositives: Legitimate testing of Microsoft UI parts.. </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="253250" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\VSIISExeLauncher.exe$</field>
+	<field name="win.eventdata.OriginalFileName">VSIISExeLauncher.exe</field>
+	<description>ATT&CK T1127: Use of VSIISExeLauncher.exe</description>
+	<info type="text">The "VSIISExeLauncher.exe" binary part of the Visual Studio/VS Code can be used to execute arbitrary binaries </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="253251" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -p | -a </field>
+	<description>ATT&CK T1127: Use of VSIISExeLauncher.exe</description>
+	<info type="text">The "VSIISExeLauncher.exe" binary part of the Visual Studio/VS Code can be used to execute arbitrary binaries </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+<rule id="253260" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wfc.exe$</field>
+	<field name="win.eventdata.OriginalFileName">wfc.exe</field>
+	<description>ATT&CK T1127: Use of Wfc.exe</description>
+	<info type="text">The Workflow Command-line Compiler can be used for AWL bypass and is listed in Microsoft's recommended block rules. </info>
+	<info type="text">Falsepositives: Legitimate use by a software developer. </info>
+	<group>attack.defense_evasion,attack.t1127,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_*
+<rule id="253270" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\WINWORD.exe$</field>
+	<field name="win.eventdata.OriginalFileName">WinWord.exe</field>
+	<description>ATT&CK T1202: Winword LOLBIN Usage</description>
+	<info type="text">Detects Winword process loading custmom dlls via the '/l' switch.
+Winword can be abused as a LOLBIN to download arbitrary file or load arbitrary DLLs.
+ </info>
+	<group>attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+<rule id="253271" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">/l |.dll|http://|https://</field>
+	<description>ATT&CK T1202: Winword LOLBIN Usage</description>
+	<info type="text">Detects Winword process loading custmom dlls via the '/l' switch.
+Winword can be abused as a LOLBIN to download arbitrary file or load arbitrary DLLs.
+ </info>
+	<group>attack.defense_evasion,attack.t1202,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition selection_parent or (all of selection_child_* and not 1 of filter*)
+<rule id="253280" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wlrmdr.exe$</field>
+	<field name="win.eventdata.OriginalFileName">WLRMNDR.EXE</field>
+	<description>ATT&CK T1218: Wlrmdr Lolbin Use as Launcher</description>
+	<info type="text">Detects use of Wlrmdr.exe in which the -u parameter is passed to ShellExecute </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253281" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">-s </field>
+	<field name="win.eventdata.CommandLine">-f </field>
+	<field name="win.eventdata.CommandLine">-t </field>
+	<field name="win.eventdata.CommandLine">-m </field>
+	<field name="win.eventdata.CommandLine">-a </field>
+	<field name="win.eventdata.CommandLine">-u </field>
+	<description>ATT&CK T1218: Wlrmdr Lolbin Use as Launcher</description>
+	<info type="text">Detects use of Wlrmdr.exe in which the -u parameter is passed to ShellExecute </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253282" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\\\\wlrmdr.exe$</field>
+	<description>ATT&CK T1218: Wlrmdr Lolbin Use as Launcher</description>
+	<info type="text">Detects use of Wlrmdr.exe in which the -u parameter is passed to ShellExecute </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253283" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">\.:\\\\Windows\\\\System32\\\\winlogon.exe</field>
+	<description>ATT&CK T1218: Wlrmdr Lolbin Use as Launcher</description>
+	<info type="text">Detects use of Wlrmdr.exe in which the -u parameter is passed to ShellExecute </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="253284" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.ParentImage">-</field>
+	<description>ATT&CK T1218: Wlrmdr Lolbin Use as Launcher</description>
+	<info type="text">Detects use of Wlrmdr.exe in which the -u parameter is passed to ShellExecute </info>
+	<group>attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="252430" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\regsvr32.exe$|\\\\rundll32.exe$|\\\\msiexec.exe$|\\\\mshta.exe$|\\\\verclsid.exe$|\\\\msdt.exe$|\\\\control.exe$|\\\\msidb.exe$</field>
+	<field name="win.eventdata.ParentImage">\\\\winword.exe$|\\\\excel.exe$|\\\\powerpnt.exe$|\\\\msaccess.exe$|\\\\mspub.exe$|\\\\eqnedt32.exe$|\\\\visio.exe$|\\\\wordpad.exe$|\\\\wordview.exe$</field>
+	<description>ATT&CK T1204 T1047 T1218: New Lolbin Process by Office Applications</description>
+	<info type="text">This rule will monitor any office apps that spins up a new LOLBin process. This activity is pretty suspicious and should be investigated. </info>
+	<group>attack.t1204.002,attack.t1047,attack.t1218.010,attack.execution,attack.defense_evasion,MITRE</group>
+</rule>
+
+<rule id="252440" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\regsvr32.exe$|\\\\rundll32.exe$|\\\\msiexec.exe$|\\\\mshta.exe$|\\\\verclsid.exe$</field>
+	<field name="win.eventdata.ParentImage">\\\\wbem\\\\WmiPrvSE.exe$</field>
+	<description>ATT&CK T1204 T1047 T1218: Lolbins Process Creation with WmiPrvse</description>
+	<info type="text">This rule will monitor LOLBin process creations by wmiprvse. Add more LOLBins to rule logic if needed. </info>
+	<group>attack.t1204.002,attack.t1047,attack.t1218.010,attack.execution,attack.defense_evasion,MITRE</group>
+</rule>
+
+<rule id="253530" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">cscript</field>
+	<field name="win.eventdata.CommandLine">manage-bde.wsf</field>
+	<description>ATT&CK T1216: Suspicious Usage of the Manage-bde.wsf Script</description>
+	<info type="text">Detects a usage of the manage-bde.wsf script that may indicate an attempt of proxy execution from script </info>
+	<group>attack.defense_evasion,attack.t1216,MITRE</group>
+</rule>
+
+<rule id="256290" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> -t\s+msi-install </field>
+	<field name="win.eventdata.CommandLine"> -i\s+http</field>
+	<description>ATT&CK T1218: DevInit Lolbin Download</description>
+	<info type="text">Detects a certain command line flag combination used by devinit.exe lolbin to download arbitrary MSI packages on a Windows system </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection_* and not 1 of filter_*
+<rule id="256710" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\wscript.exe$|\\\\cscript.exe$</field>
+	<description>ATT&CK T1059: Wscript Execution from Non C Drive</description>
+	<info type="text">Detects Wscript or Cscript executing from a drive other than C. This has been observed with Qakbot executing from within a mounted ISO file. </info>
+	<info type="text">Falsepositives: Legitimate applications installed on other partitions such as "D:". </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="256711" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">.js|.vbs|.vbe</field>
+	<description>ATT&CK T1059: Wscript Execution from Non C Drive</description>
+	<info type="text">Detects Wscript or Cscript executing from a drive other than C. This has been observed with Qakbot executing from within a mounted ISO file. </info>
+	<info type="text">Falsepositives: Legitimate applications installed on other partitions such as "D:". </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="256712" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">:\\\\</field>
+	<description>ATT&CK T1059: Wscript Execution from Non C Drive</description>
+	<info type="text">Detects Wscript or Cscript executing from a drive other than C. This has been observed with Qakbot executing from within a mounted ISO file. </info>
+	<info type="text">Falsepositives: Legitimate applications installed on other partitions such as "D:". </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="256713" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> \.:\\\\\\\\| '\.:\\\\| "\.:\\\\\\\\</field>
+	<description>ATT&CK T1059: Wscript Execution from Non C Drive</description>
+	<info type="text">Detects Wscript or Cscript executing from a drive other than C. This has been observed with Qakbot executing from within a mounted ISO file. </info>
+	<info type="text">Falsepositives: Legitimate applications installed on other partitions such as "D:". </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="256714" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">%</field>
+	<description>ATT&CK T1059: Wscript Execution from Non C Drive</description>
+	<info type="text">Detects Wscript or Cscript executing from a drive other than C. This has been observed with Qakbot executing from within a mounted ISO file. </info>
+	<info type="text">Falsepositives: Legitimate applications installed on other partitions such as "D:". </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+<rule id="256715" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> \\\\\\\\</field>
+	<description>ATT&CK T1059: Wscript Execution from Non C Drive</description>
+	<info type="text">Detects Wscript or Cscript executing from a drive other than C. This has been observed with Qakbot executing from within a mounted ISO file. </info>
+	<info type="text">Falsepositives: Legitimate applications installed on other partitions such as "D:". </info>
+	<group>attack.execution,attack.t1059,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection*
+<rule id="256780" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\mpiexec.exe$</field>
+	<field name="win.eventdata.Hashes">IMPHASH=d8b52ef6aaa3a81501bdfff9dbb96217</field>
+	<field name="win.eventdata.Hashes">IMPHASH=d8b52ef6aaa3a81501bdfff9dbb96217</field>
+	<description>ATT&CK T1218: MpiExec Lolbin</description>
+	<info type="text">Detects a certain command line flag combination used by mpiexec.exe LOLBIN from HPC pack that can be used to execute any other binary </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="256781" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine"> /n\s+1 | -n\s+1 </field>
+	<description>ATT&CK T1218: MpiExec Lolbin</description>
+	<info type="text">Detects a certain command line flag combination used by mpiexec.exe LOLBIN from HPC pack that can be used to execute any other binary </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition 1 of selection* and not 1 of filter*
+<rule id="257370" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">Microsoft.NodejsTools.PressAnyKey.exe\s+normal </field>
+	<description>ATT&CK T1218: NodejsTools PressAnyKey Lolbin</description>
+	<info type="text">Detects a certain command line flag combination used by Microsoft.NodejsTools.PressAnyKey.exe that can be used to execute any other binary </info>
+	<info type="text">Falsepositives: Other tools with the same command line flag combination. Legitimate uses as part of Visual Studio development. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="257371" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">.exe\s+normal </field>
+	<field name="win.eventdata.CommandLine">.exe$</field>
+	<description>ATT&CK T1218: NodejsTools PressAnyKey Lolbin</description>
+	<info type="text">Detects a certain command line flag combination used by Microsoft.NodejsTools.PressAnyKey.exe that can be used to execute any other binary </info>
+	<info type="text">Falsepositives: Other tools with the same command line flag combination. Legitimate uses as part of Visual Studio development. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="257372" level="14">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\Microsoft\\\\NodeJsTools\\\\NodeJsTools</field>
+	<description>ATT&CK T1218: NodejsTools PressAnyKey Lolbin</description>
+	<info type="text">Detects a certain command line flag combination used by Microsoft.NodejsTools.PressAnyKey.exe that can be used to execute any other binary </info>
+	<info type="text">Falsepositives: Other tools with the same command line flag combination. Legitimate uses as part of Visual Studio development. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+///Manual check needed!  Unknown condition all of selection* and not 1 of filter_*
+<rule id="258330" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.Image">\\\\update.exe$</field>
+	<field name="win.eventdata.CommandLine">.exe</field>
+	<description>ATT&CK T1218: Squirrel Lolbin</description>
+	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
+	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. Atom. Gitkraken. Slack. Teams. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="258331" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">--processStart|--processStartAndWait|--createShortcut</field>
+	<description>ATT&CK T1218: Squirrel Lolbin</description>
+	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
+	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. Atom. Gitkraken. Slack. Teams. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="258332" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.:\\\\Users\\\\</field>
+	<field name="win.eventdata.CommandLine">\\\\AppData\\\\Local\\\\Discord\\\\Update.exe</field>
+	<field name="win.eventdata.CommandLine"> --processStart</field>
+	<field name="win.eventdata.CommandLine">Discord.exe</field>
+	<description>ATT&CK T1218: Squirrel Lolbin</description>
+	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
+	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. Atom. Gitkraken. Slack. Teams. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="258333" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.:\\\\Users\\\\</field>
+	<field name="win.eventdata.CommandLine">\\\\AppData\\\\Local\\\\GitHubDesktop\\\\Update.exe</field>
+	<field name="win.eventdata.CommandLine">GitHubDesktop.exe</field>
+	<field name="win.eventdata.CommandLine">--createShortcut|--processStartAndWait</field>
+	<description>ATT&CK T1218: Squirrel Lolbin</description>
+	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
+	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. Atom. Gitkraken. Slack. Teams. </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
+
+<rule id="258334" level="10">
+	<if_group>sysmon_event1</if_group>
+	<field name="win.eventdata.CommandLine">\.:\\\\Users\\\\</field>
+	<field name="win.eventdata.CommandLine">\\\\AppData\\\\Local\\\\Microsoft\\\\Teams\\\\Update.exe</field>
+	<field name="win.eventdata.CommandLine">Teams.exe</field>
+	<field name="win.eventdata.CommandLine">--processStart|--createShortcut</field>
+	<description>ATT&CK T1218: Squirrel Lolbin</description>
+	<info type="text">Detects Possible Squirrel Packages Manager as Lolbin </info>
+	<info type="text">Falsepositives: 1Clipboard. Beaker Browser. Caret. Collectie. Discord. Figma. Flow. Ghost. GitHub Desktop. GitKraken. Hyper. Insomnia. JIBO. Kap. Kitematic. Now Desktop. Postman. PostmanCanary. Rambox. Simplenote. Skype. Slack. SourceTree. Stride. Svgsus. WebTorrent. WhatsApp. WordPress.com. Atom. Gitkraken. Slack. Teams. </info>
+	<info type="text">Sigma UUID: fa4b21c9-0057-4493-b289-2556416ae4d7 </info>
+	<info type="link">http://www.hexacorn.com/blog/2019/03/30/sqirrel-packages-manager-as-a-lolbin-a-k-a-many-electron-apps-are-lolbins-by-default/ </info>
+	<info type="link">http://www.hexacorn.com/blog/2018/08/16/squirrel-as-a-lolbin/ </info>
+	<group>attack.execution,attack.defense_evasion,attack.t1218,MITRE</group>
+</rule>
